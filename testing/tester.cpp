@@ -13,6 +13,7 @@ void test_strategy(const std::string& start_word, const std::vector<std::string>
                    const std::string& outfile_name, std::string (*test_func)(const std::vector<std::string>&)) {
     std::vector<int> attempts;
     std::string word, guess, result;
+    std::vector<int> char_count(26,0);
     auto start_time = std::chrono::steady_clock::now();
 
     for (size_t n = 0; n < words.size(); n++) {
@@ -26,7 +27,7 @@ void test_strategy(const std::string& start_word, const std::vector<std::string>
         }
 
         while (true) {
-            result = evaluate(guess, word);
+            result = evaluate(guess, word, char_count);
             prune_word_list(guess, result, temp_list); 
             if (temp_list.size() == 1) {
                 attempts.push_back(tries);
