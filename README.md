@@ -32,11 +32,11 @@ The program then tells you how many possible words remain, together with what to
 And the process repeats until a solution is found.
 
 ## Results
-Compared to randomly picking from the remaining words, the method of choosing the word which generates the highest word distribution entropy performs slightly better (~9%). However, this comes at a price of a slower execution time (~5x slower). The word list used here contains all the possible Wordle answers, but not all the possible guesses.
+Compared to randomly picking from the remaining words, the method of choosing the word which generates the highest result distribution entropy performs slightly better (~9%). However, this comes at a price of a slower execution time (~12x slower). The word list used here contains all the possible Wordle answers, but not all the possible guesses.
 
 ![plot](./testing/plot.png)
 
 
-When going through the list of every possible guess, the difference in speed is much greater (~23x slower) while the difference in performance is slightly better (~11%). 
+When going through the list of every possible guess, the difference in speed is much greater (~58x slower) while the difference in performance is slightly better (~11%). 
 
 ![full_plot](./testing/full_plot.png)
