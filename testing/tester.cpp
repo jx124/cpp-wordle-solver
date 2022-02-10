@@ -74,8 +74,8 @@ int main(int argc, const char** argv) {
         words.push_back(word); 
     }
 
-    test_strategy("slate", words, "./test_data/random_data.csv", randomly_choose_word);
-    test_strategy("slate", words, "./test_data/entropy_data.csv", find_max_entropy);
+    test_strategy("slate", words, "./test_data/full_random_data.csv", randomly_choose_word);
+    test_strategy("slate", words, "./test_data/full_entropy_data.csv", find_max_entropy);
 
     return 0;
 }
