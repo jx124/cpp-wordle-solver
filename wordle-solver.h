@@ -16,3 +16,4 @@ void prune_word_list(const std::string& guess, const std::string& result, std::v
 int convert_to_index(const std::string& result);
 float get_entropy(const std::string& word, const std::vector<std::string>& words, std::vector<int>& partitions);
 std::string find_max_entropy(const std::vector<std::string>& words);
+std::string randomly_choose_word(const std::vector<std::string>& words);

@@ -77,6 +77,7 @@ int convert_to_index(const std::string& result) { // TODO: update to accomodate 
 // \param partitions std::vector of int containing enough elements for every possible combination of game results. (243 for 5-word Wordle)
 // \return float of entropy value.
 float get_entropy(const std::string& word, const std::vector<std::string>& words, std::vector<int>& partitions) {
+    // TODO: implement a way to choose differentiate between similar words within a single partition
     std::fill(partitions.begin(), partitions.end(), 0);
     std::vector<int> char_count(26,0);
     int total = words.size();
@@ -120,4 +121,8 @@ std::string find_max_entropy(const std::vector<std::string>& words) {
         }
     }
     return max_entropy_word;
+}
+
+std::string randomly_choose_word(const std::vector<std::string>& words) {
+    return words[std::rand() % words.size()];
 }
