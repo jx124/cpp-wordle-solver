@@ -103,6 +103,8 @@ float get_entropy(const std::string& word, const std::vector<std::string>& words
     return entropy;
 }
 
+static std::vector<std::string> bad_guesses {"weird", "price", "antic", "corny", "baste"};
+
 // Finds and returns the word with the maximum entropy among 'words'.
 // \param words std::vector of std::string containing all possible words remaining.
 // \return std::string of word.
@@ -115,7 +117,11 @@ std::string find_max_entropy(const std::vector<std::string>& words) {
     for (auto& word : words) {
         entropy = get_entropy(word, words, partitions);
 
-        if (entropy > max_entropy) {
+        if (entropy > max_entropy &&
+            !(std::any_of(bad_guesses.begin(), bad_guesses.end(), 
+              [&](const std::string& bad_guess){ return bad_guess == word; }) &&
+            words.size() > 10)) // exclude word if it is part of bad_guesses and words.size() > 10
+        {
             max_entropy = entropy;
             max_entropy_word = word;
         }
