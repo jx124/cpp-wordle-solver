@@ -36,14 +36,14 @@ entropy_mean = np.mean(entropy_data)
 plt.axvline(entropy_mean, c = 'k', ls = '--', lw = 1)
 plt.annotate(f"Entropy mean: {entropy_mean:.3f}\nElapsed time: {entropy_time} s",
             (entropy_mean, 900),
-            xytext = (-167, 0),
+            xytext = (-162, 0),
             textcoords="offset points",
             arrowprops = dict(arrowstyle="->", connectionstyle="arc3,rad=-0.2", relpos = (1,0.5)),
             fontsize = 11)
 
-plt.axvline(3.421, c = 'b', ls = '--', lw = 1)
-plt.annotate("Optimal mean: 3.421\nElapsed time: 4.5 s",
-            (3.421, 800),
+plt.axvline(3.509, c = 'b', ls = '--', lw = 1)
+plt.annotate("Optimal mean: 3.509\nElapsed time: 4.5 s",
+            (3.509, 800),
             xytext = (-160, 0),
             textcoords="offset points",
             arrowprops = dict(arrowstyle="->", connectionstyle="arc3,rad=-0.2", relpos = (1,0.5)),
